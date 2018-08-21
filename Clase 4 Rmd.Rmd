@@ -1,0 +1,25 @@
+---
+title: "Clase 4"
+author: "Melany Waldisperg"
+date: "21 de agosto del 2018"
+output: 
+    html_document:
+      fig_caption: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,warning = FALSE)
+library(tidyverse)
+```
+
+##Introducción
+Este es un reporte sobre Dietas en pollos
+
+##Resultados
+A continuación un gráfico
+
+```{r,fig.cap="Figura 1. Modelos lineales para cada dieta relacionando la edad de los pollos con su peso"}
+data("ChickWeight")
+ggplot(ChickWeight, aes(x=Time,y=weight))+geom_smooth(method="lm",aes(fill=Diet,color=Diet))
+```
+
